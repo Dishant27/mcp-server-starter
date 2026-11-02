@@ -1,0 +1,47 @@
+{
+  "name": "mcp-server-starter",
+  "version": "0.1.0",
+  "description": "A minimal, production-minded TypeScript starter for Model Context Protocol (MCP) servers: stdio transport, stderr-only logging, zod-validated tools, CI.",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "mcp-server-starter": "dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc && node -e \"require('fs').chmodSync('dist/index.js', 0o755)\"",
+    "start": "node dist/index.js",
+    "dev": "tsc --watch",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src",
+    "inspect": "npx @modelcontextprotocol/inspector node dist/index.js"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "mcp-server",
+    "template",
+    "starter",
+    "typescript",
+    "claude",
+    "cursor"
+  ],
+  "author": "Dishant Kumar",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.1",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.17.0",
+    "@types/node": "^20.11.0",
+    "eslint": "^9.17.0",
+    "typescript": "^5.6.3",
+    "typescript-eslint": "^8.18.0"
+  }
+}
